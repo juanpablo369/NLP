@@ -155,6 +155,11 @@ router.post('/response', async(req, res, next) =>{
   manager.addAnswer('es', 'pregunta.directorauto', 'El Ing. Jairo Darío Castillo Calderón, es el director de la carrera de Mecánica Automotriz, su correo es: jdcastilloc@unl.edu.ec');
   manager.addAnswer('es', 'pregunta.directorauto', 'El Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
   
+  manager.addAnswer('es', 'pregunta.rector', 'El director de la carrera de Mecánica Automotriz, es el Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El director de la carrera de Mecánica es el Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El Ing. Jairo Darío Castillo Calderón, es el director de la carrera de Mecánica Automotriz, su correo es: jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
+  
   manager.addAnswer('es', 'greetings.bye', 'hablamos luego');
   manager.addAnswer('es', 'greetings.bye', 'chao, hablamos luego');
   manager.addAnswer('es', 'greetings.bye', 'hasta luego!');
