@@ -168,7 +168,7 @@ router.post('/response', async(req, res, next) =>{
   manager.addAnswer('es', 'greetings.hello', 'Saludos!');
   manager.save();
     await manager.train(); 
-      const response = await manager.process('es', req.body.entrada);
+      const response = await manager.process('es', req.body.entrada); 
       console.log(response);   
       console.log(response.answer);  
       console.log(response.answer);    

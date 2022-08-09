@@ -18,8 +18,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
-
-<body onload="decir(<%= response %>)">
+ 
+<body onload=decir('<%= response.answer %>'); >
 
   <nav class="navbar navbar-light bg-light" style="position:absolute; box-shadow: 10px 10px 10px #ddd;">
     <div class="container-fluid">
@@ -50,20 +50,12 @@
             
           <div id="global" class="container"> 
                <div id="mensajes" class="mensajes container">
-                <% if (response.length> 0) { %>  
+                <% if  (response)  { %>  
                   <div  class="textor">
                     <p>
-                      <%= response.answer %></p>
+                      <%= response.answer %> </p>
                   </div> 
-                  
-                  <% } else { %>
-                    <div  class="textor">
-                      <p>
-                        <%= response.answer %></p>
-                    </div> 
-                    <script>
-                      decir(<%= response.answer %>)
-                    </script>
+                    
                     <% }  %>
                 </div> 
           </div>
