@@ -77,6 +77,12 @@ router.post('/response', async(req, res, next) =>{
   manager.addDocument('es', 'DECANO DE LA FACULTAD DE LA ENERGÍA?', 'pregunta.decanosis');
   manager.addDocument('es', 'quiés es el DECANO DE LA FACULTAD DE LA ENERGÍA?', 'pregunta.decanosis');
   
+  manager.addDocument('es', 'quién es el rector de la universidad?', 'pregunta.rector');
+  manager.addDocument('es', 'quién es el rector?', 'pregunta.rector');
+  manager.addDocument('es', 'quién es el rector de la nacional?', 'pregunta.rector');
+  manager.addDocument('es', 'quién es el rector de la universidad nacional?', 'pregunta.rector');
+  manager.addDocument('es', 'cuál es el rector de la universidad?', 'pregunta.rector');
+  
   
   
   manager.addDocument('es', 'hasta otra!', 'greetings.bye');
@@ -94,7 +100,7 @@ router.post('/response', async(req, res, next) =>{
   manager.addDocument('es', 'buenas noches', 'greetings.noches');
   manager.addDocument('es', 'hola, buenas noches', 'greetings.noches');
   manager.addDocument('es', 'buena noches', 'greetings.noches');
-  
+
   // Train also the NLG
   manager.addAnswer('es', 'pregunta.decanoedu', 'El decano de la facultad de la Educación, el Arte y la Comunicación, es el Dr. Yovany Salazar Estrada, Ph.D., yovany.salazar@unl.edu.ecc');
   manager.addAnswer('es', 'pregunta.decanoedu', 'El decano de la facultad de la Educación, el Arte y la Comunicación, es el Dr. Yovany Salazar Estrada, Ph.D., yovany.salazar@unl.edu.ec');
@@ -155,10 +161,10 @@ router.post('/response', async(req, res, next) =>{
   manager.addAnswer('es', 'pregunta.directorauto', 'El Ing. Jairo Darío Castillo Calderón, es el director de la carrera de Mecánica Automotriz, su correo es: jdcastilloc@unl.edu.ec');
   manager.addAnswer('es', 'pregunta.directorauto', 'El Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
   
-  manager.addAnswer('es', 'pregunta.rector', 'El director de la carrera de Mecánica Automotriz, es el Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
-  manager.addAnswer('es', 'pregunta.rector', 'El director de la carrera de Mecánica es el Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
-  manager.addAnswer('es', 'pregunta.rector', 'El Ing. Jairo Darío Castillo Calderón, es el director de la carrera de Mecánica Automotriz, su correo es: jdcastilloc@unl.edu.ec');
-  manager.addAnswer('es', 'pregunta.rector', 'El Ing. Jairo Darío Castillo Calderón, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El actual Rector de la Universidad Nacional de Loja es, es el Ing. Michael Valarezo, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El actual Rector de la Universidad Nacional de Loja es, es el Ing. Michael Valarezo, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El Rector de la Universidad Nacional de Loja es, es el Ing. Michael Valarezo, jdcastilloc@unl.edu.ec');
+  manager.addAnswer('es', 'pregunta.rector', 'El Rector de la Universidad Nacional de Loja es, es el Ing. Michael Valarezo, jdcastilloc@unl.edu.ec');
   
   manager.addAnswer('es', 'greetings.bye', 'hablamos luego');
   manager.addAnswer('es', 'greetings.bye', 'chao, hablamos luego');
