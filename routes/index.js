@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 ///
 
-router.get('/response', async(req, res, next) =>{
+router.post('/response', async(req, res, next) =>{
  
   const { NlpManager } = require('node-nlp'); 
   const manager = new NlpManager({ languages: ['es'], forceNER: true });
@@ -88,6 +88,12 @@ router.get('/response', async(req, res, next) =>{
   manager.addDocument('es', 'hola', 'greetings.hello');
   manager.addDocument('es', 'que tal?', 'greetings.hello');
   manager.addDocument('es', 'como vás?', 'greetings.hello');
+  manager.addDocument('es', 'buenas tardes', 'greetings.tardes');
+  manager.addDocument('es', 'hola, buenas tardes', 'greetings.tardes');
+  manager.addDocument('es', 'buena tarde', 'greetings.tardes');
+  manager.addDocument('es', 'buenas noches', 'greetings.noches');
+  manager.addDocument('es', 'hola, buenas noches', 'greetings.noches');
+  manager.addDocument('es', 'buena noches', 'greetings.noches');
   
   // Train also the NLG
   manager.addAnswer('es', 'pregunta.decanoedu', 'El decano de la facultad de la Educación, el Arte y la Comunicación, es el Dr. Yovany Salazar Estrada, Ph.D., yovany.salazar@unl.edu.ecc');
@@ -152,17 +158,23 @@ router.get('/response', async(req, res, next) =>{
   manager.addAnswer('es', 'greetings.bye', 'hablamos luego');
   manager.addAnswer('es', 'greetings.bye', 'chao, hablamos luego');
   manager.addAnswer('es', 'greetings.bye', 'hasta luego!');
+  manager.addAnswer('es', 'greetings.tardes', 'Buenas tardes! :3');
+  manager.addAnswer('es', 'greetings.tardes', 'Hola, buenas tardes!');
+  manager.addAnswer('es', 'greetings.tardes', 'buenas tardes!');
+  manager.addAnswer('es', 'greetings.noches', 'Buenas noches! :3');
+  manager.addAnswer('es', 'greetings.noches', 'Hola, buenas noches!');
+  manager.addAnswer('es', 'greetings.noches', 'buenas noches!');
   manager.addAnswer('es', 'greetings.hello', 'Hola!');
   manager.addAnswer('es', 'greetings.hello', 'Saludos!');
   manager.save();
     await manager.train(); 
       const response = await manager.process('es', req.body.entrada);
-      console.log(response);      
+      console.log(response);   
       console.log(response.answer);  
       console.log(response.answer);    
     res.render("index", {
     title: "Asistente Universitario says",
-    response,
+    response:response,
   });
 }); 
 

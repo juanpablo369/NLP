@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body onload="decir(<%= response %>)">
 
   <nav class="navbar navbar-light bg-light" style="position:absolute; box-shadow: 10px 10px 10px #ddd;">
     <div class="container-fluid">
@@ -56,16 +56,23 @@
                       <%= response.answer %></p>
                   </div> 
                   
-                  <% } %>
+                  <% } else { %>
+                    <div  class="textor">
+                      <p>
+                        <%= response.answer %></p>
+                    </div> 
+                    <script>
+                      decir(<%= response.answer %>)
+                    </script>
+                    <% }  %>
                 </div> 
           </div>
   
-            <form action="/response" method="get">
-          <input type="text" onkeypress="if(event.keyCode == 13){ getEntrada();}else{return event.keyCode != 13;}"
+            <form action="/response" method="post">
+          <input type="text" 
             id="entrada" class="form-control entrada" name="entrada" style="height: 100px;" placeholder="Escribe algo"></input>
-<button type="submit" class="btn btn send"  onclick="getEntrada()">Enviar</button>
-          <a id="boton" type="submit" class=" mx-auto btn btn-white send" onclick="getEntrada()"> <i class="fa fa-play"></i>
-            Run</a>
+          <button type="submit" id="boton"class="btn btn send mx-auto"  >Enviar</button>
+       
           </form>
         </div>
         <p style="color:#eee" class="mr-auto">Juan Pablo Torres Calva</p>
@@ -119,8 +126,8 @@
               div.classList.add("textor");
               //creamos el elemento p para el texto respuesta
               var p = document.createElement("p");  
-                decir(response); 
-              p.appendChild(response);
+                decir(response.answer); 
+              p.appendChild(response.answer);
               //agregamos el texto de respuesta al div texto"
               div.appendChild(p);
               //añadimos el div texto al div padre: "mensajes"
