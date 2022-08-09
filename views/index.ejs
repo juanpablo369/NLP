@@ -46,18 +46,27 @@
         <div class="row">
           <style type="text/css">
 
-          </style>
-          <div id="global" class="container">
-            <div id="mensajes" class="mensajes container">
-            </div>
+          </style> 
+            
+          <div id="global" class="container"> 
+               <div id="mensajes" class="mensajes container">
+                <% if (response.length> 0) { %>  
+                  <div  class="textor">
+                    <p>
+                      <%= response.answer %></p>
+                  </div> 
+                  
+                  <% } %>
+                </div> 
           </div>
-
-          <textarea type="text" onkeypress="if(event.keyCode == 13){ getEntrada();}else{return event.keyCode != 13;}"
-            id="entrada" class="form-control entrada" name="entrada" style="height: 100px;" placeholder="Escribe algo"></textarea>
-
-          <a id="boton" class=" mx-auto btn btn-white send" onclick="getEntrada()"> <i class="fa fa-play"></i>
+  
+            <form action="/response" method="get">
+          <input type="text" onkeypress="if(event.keyCode == 13){ getEntrada();}else{return event.keyCode != 13;}"
+            id="entrada" class="form-control entrada" name="entrada" style="height: 100px;" placeholder="Escribe algo"></input>
+<button type="submit" class="btn btn send"  onclick="getEntrada()">Enviar</button>
+          <a id="boton" type="submit" class=" mx-auto btn btn-white send" onclick="getEntrada()"> <i class="fa fa-play"></i>
             Run</a>
-
+          </form>
         </div>
         <p style="color:#eee" class="mr-auto">Juan Pablo Torres Calva</p>
       </div>
@@ -66,6 +75,10 @@
 
 
       <script>
+
+        function enviar(e){
+          
+        }
 
         function pulsar(e) {
           if (e.keyCode === 13 && !e.shiftKey) {
@@ -100,54 +113,14 @@
             document.getElementsByClassName("entrada")[0].value = "";
 
             // PARA RESPONDER -----  >> SE ESPERA 2 SEGUNDOS Y {
-            setTimeout(function () {
-              //const lorca = require('lorca-nlp');
-              //var doc = lorca(inputValue); 
-              //doc.words().get();
+            setTimeout(function () { 
               //creamos el div "texto", el cual va a contener el elemento p con el texto de respuesta:
               var div = document.createElement("div");
-              div.classList.add("textor")
+              div.classList.add("textor");
               //creamos el elemento p para el texto respuesta
-              var p = document.createElement("p");
-              const saludo = ["hola", "holi", "saludo", "saludos", "salu", "hol", "hola ", " hola ", " hola", "hola ", "holaa", "oli", "que hay?",];
-              const tardes = ["tardes", "holi", "saludo", "saludos", "salu", "hol"];
-              const noches = ["tardes", "holi", "saludo", "saludos", "salu", "hol"];
-              const dias = ["días", "dias", "", "saludos", "salu", "hol"]; 
-              const primercicloreq = ["días", "dias", "", "saludos", "salu", "hol"]; 
-
-              const rstart = ["Empecemos., soy una Inteligencia Artificial que sabe todo de esta universidad.","Hola., soy una Inteligencia Artificial que sabe todo de esta universidad.", "Hola!, empecemos, necesitas algo?", "Hola, Qué necesitas?",  "Hola!", "hola, soy tu asistente, necesitas algo?", "Saludos, necesitas algo?", "Hola, necesitas algo?", "Saludos, ¿cómo puedo ayudarte?","Hola, ¿cómo puedo ayudarte?", "Saludos, ¿necesitas algo?", "ola","saludos"];
-              const startaleatorio = rstart[Math.floor(Math.random() * rstart.length)];  
-              const rsaludo = ["Que tal!", "Saludos", "Saludos Humano", "Oli, uwu", "Hola!", "hola, necesitas algo?", "Qué necesitas?", "Hola, dime", "Hey, Hola", "ola"];
-              const saludoaleatorio = rsaludo[Math.floor(Math.random() * rsaludo.length)];  
-
-              
-              if (saludo.includes(inputValue.toLowerCase())) {
-                var res = rsaludo[Math.floor(Math.random() * rsaludo.length)];
-                var rText = document.createTextNode(res);
-                decir(res);
-              } else if (tardes.includes(inputValue.toLowerCase())) {
-                var rText = document.createTextNode("Buenas Tardes!");
-                decir("buenas tardes");
-                decir(res);
-              } else if (noches.includes(inputValue.toLowerCase())) {
-                var res = noches[Math.floor(Math.random() * noches.length)];
-                var rText = document.createTextNode(res);
-                decir(res);
-              } else if (dias.includes(inputValue.toLowerCase())) {
-                var res = dias[Math.floor(Math.random() * dias.length)];
-                var rText = document.createTextNode(res);
-                decir(res);
-              } else if (saludo.includes(inputValue.toLowerCase())) {
-                var rText = document.createTextNode("Mis respuestas aún son limitadas, has las preguntas correctas");
-
-              } else if (saludo.includes(inputValue.toLowerCase())) {
-                var rText = document.createTextNode("Mis respuestas aún son limitadas, has las preguntas correctas");
-
-              } else {
-                var rText = document.createTextNode("Mis respuestas aún son limitadas, has las preguntas correctas");
-
-              }
-              p.appendChild(rText);
+              var p = document.createElement("p");  
+                decir(response); 
+              p.appendChild(response);
               //agregamos el texto de respuesta al div texto"
               div.appendChild(p);
               //añadimos el div texto al div padre: "mensajes"
@@ -157,156 +130,27 @@
         }
         function decir(texto) {
           speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
-        }
-        /*
-        const analizar = () => {
-
-          // DIV General de todos los Mensajes 
-          var padre = document.getElementById("mensajes");
-          // Valor de entrada del usuario
-          var inputValue = document.getElementById("entrada").value;
-          if (inputValue != "" && inputValue != " ") {
-
-            //creamos el div "texto", el cual va a contener el texto ingresado
-            var div = document.createElement("div");
-            div.classList.add("texto")
-            //creamos el elemento p para el texto ingresado
-            var p = document.createElement("p");
-            //var pText = document.createTextNode(" Fragmento a analizar:" + inputValue);
-            var pText = document.createTextNode(inputValue);
-            p.appendChild(pText);
-            //agregamos el texto de ingresado al div texto"
-            div.appendChild(p);
-            //añadimos el div texto al div padre: "mensajes"
-            padre.appendChild(div);
-            //borramos el texto ingresado del input 
-
-            // PARA RESPONDER -----  >> SE ESPERA 2 SEGUNDOS Y {
-            setTimeout(function () { 
-              
-              const reservadas = ["function", "console.log", "alert", "do", "var", "const", "if", "else", "while", "(", ")", "{", "}", "[", "]", "&", "=", "|", "<", ">", ";",
-                "break", "case", "catch", "class", "continue", "debugger", "default", "delete", "else", "export", "extends", "finally", "for", "if", "import", "in", "instanceof",
-                "new", "return", "super", "switch", "this", "throw", "try", "typeof", "var", "void", "with", "yield", "enum", "implements", "interface",
-                "let", "package", "private", "protected", "public", "static", "await", "abstract", "boolean", "byte", "char", "double", "final", "float", "goto", "int",
-                "long", "native", "short", "sychronized", "throws", "transient", "volatile", "null", "arguments", "get", "set",];
-              const booleans = ["true", "false"];
-
-              //creamos el div "texto", el cual va a contener el elemento p con el texto de respuesta:
-              var divs = document.createElement("div");
-              divs.classList.add("textor")
-              divs.classList.add("navbar")
-              //creamos el elemento p para el texto respuesta
-              var x = document.createElement("p");
-              var words = inputValue.split(/\W+/);
-              document.getElementsByClassName("entrada")[0].value = "";
-              var pText = document.createTextNode("Tokenización:\n  " + words);
-              x.appendChild(pText);
-              //agregamos el texto de respuesta al div texto"
-              divs.appendChild(x);
-              //añadimos el div texto al div padre: "mensajes"
-              padre.appendChild(divs);
-
-            }, 500);
-
-            document.getElementsByClassName("entrada")[0].value = "";
-            // PARA RESPONDER -----  >> SE ESPERA 2 SEGUNDOS Y {
-            setTimeout(function () {
-
-
-              const reservadas = ["router", "req", "res", "next", "render", "classList", "createElement", "document", "function", "console.log", "alert", "var", "const", "(", ")", "{", "}", "[", "]", "&", "=", "|", "<", ">", ";",
-                "break", "case", "catch", "class", "continue", "debugger", "default", "delete", "export", "extends", "finally", "for", "import", "in", "instanceof",
-                "new", "return", "super", "switch", "this", "throw", "try", "typeof", "var", "void", "with", "yield", "enum", "implements", "interface",
-                "let", "package", "private", "protected", "public", "static", "await", "abstract", "goto",
-                "sychronized", "throws", "transient", "volatile", "arguments"];
-              const booleans = ["true", "false"];
-              const propiedades = ["length", "null", "includes"];
-              const metodos = ["get", "set"];
-              const condicionales = ["if", "else", "while", "do"];
-              const tipodato = ["boolean", "byte", "char", "double", "final", "float", "int", "long", "native", "short"];
-              const entero = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-              const simbolos = ["(", ")", "{", "}", "=", "+", "-", "==", "!", "[", "]"];
-
-              var words = inputValue.split(/\W+/);
-              for (let i = 0; i < words.length; i++) {
-
-                //creamos el div "texto", el cual va a contener el elemento p con el texto de respuesta:
-                var divs = document.createElement("div");
-                divs.classList.add("textor")
-                //creamos el elemento p para el texto respuesta
-                var x = document.createElement("p");
-                if (reservadas.includes(words[i])) {
-                  var pText = document.createTextNode("Palabra Reservada: \r\n  " + words[i] + " \n");
-
-                } else if (propiedades.includes(words[i])) {
-                  var pText = document.createTextNode("Propiedad: \r\n " + words[i] + " \n");
-
-                } else if (metodos.includes(words[i])) {
-                  var pText = document.createTextNode("Método: \r\n " + words[i] + " \n");
-
-                } else if (condicionales.includes(words[i])) {
-                  var pText = document.createTextNode("Condicional: \r\n " + words[i] + " \n");
-
-                } else if (tipodato.includes(words[i])) {
-                  var pText = document.createTextNode("Tipo de dato: \r\n " + words[i] + " \n");
-
-                } else if (booleans.includes(words[i])) {
-                  var pText = document.createTextNode("Booleano: \r\n " + words[i] + " \n");
-
-                } else {
-                  var pText = document.createTextNode("Otro:  \r\n " + words[i] + " \n");
-
-                }
-                x.appendChild(pText);
-                //agregamos el texto de respuesta al div texto"
-                divs.appendChild(x);
-                //añadimos el div texto al div padre: "mensajes"
-                padre.appendChild(divs);
-
-
-
-              }
-
-            }, 1500);
-          }
-        }
-        */
-
+        } 
       </script>
-
-<script>
-  //NLP --------
-const { NlpManager } = require('node-nlp');
-
-const manager = new NlpManager({ languages: ['es'], forceNER: true });
-// Adds the utterances and intents for the NLP
-manager.addDocument('es', 'hasta otra!', 'greetings.bye');
-manager.addDocument('es', 'ok, te veo luego', 'greetings.bye');
-manager.addDocument('es', 'chao, te veo luego', 'greetings.bye');
-manager.addDocument('es', 'hasta luego!', 'greetings.bye');
-manager.addDocument('es', 'te veo luego', 'greetings.bye');
-manager.addDocument('es', 'me tengo que ir', 'greetings.bye');
-manager.addDocument('es', 'hola', 'greetings.hello');
-manager.addDocument('es', 'que tal?', 'greetings.hello');
-manager.addDocument('es', 'como vás?', 'greetings.hello');
-
-// Train also the NLG
-manager.addAnswer('es', 'greetings.bye', 'hablamos luego');
-manager.addAnswer('es', 'greetings.bye', 'chao, hablamos luego');
-manager.addAnswer('es', 'greetings.bye', 'hasta luego!');
-manager.addAnswer('es', 'greetings.hello', 'Hola!');
-manager.addAnswer('es', 'greetings.hello', 'Saludos!');
-
-// Train and save the model.
-(async() => {
-    await manager.train();
-    manager.save();
-    const response = await manager.process('es', 'chao');
-    console.log(response);
-})();
+ 
 
 
 
-</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
