@@ -1,0 +1,24 @@
+{
+  "name": "automatas-nlp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@nlpjs/msbf-connector": "^4.23.5",
+    "brain": "^1.0.0",
+    "brain.js": "^2.0.0-beta.15",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "lorca-nlp": "^1.0.12",
+    "morgan": "~1.9.1",
+    "natural": "^5.2.3",
+    "node-nlp": "^4.24.0",
+    "node-nlp-rn": "^3.5.2",
+    "nodemon": "^2.0.19"
+  }
+}

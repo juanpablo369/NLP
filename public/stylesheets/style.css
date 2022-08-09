@@ -1,0 +1,58 @@
+body {
+  background-color: #111;
+  color: #111;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.active{
+  position: absolute;
+  }
+.send{
+  margin-bottom: 21px;
+  background: linear-gradient(90deg, rgba(225,224,254,1) 0%, rgba(231,231,245,1) 53%, rgba(238,247,249,1) 89%);
+
+}
+.send:active{ 
+  background-color: #ddd;
+  box-shadow: 10px 10px 10px #000; 
+}
+.send:hover {
+  box-shadow: 10px 10px 10px #ddd;
+  background: linear-gradient(90deg, rgba(185,183,231,1) 0%, rgba(236,236,242,1) 53%, rgba(217,235,238,1) 88%);
+
+  }
+  #global {
+          height: 369px; 
+          border: 1px solid #ddd;
+          background: #f1f1f1;
+          overflow-y: scroll;
+      }
+      #mensajes {
+          height: auto;
+      }
+      .texto {
+        border-radius: 12px;
+        text-align: right;
+        float: right;
+        padding:6px;
+        padding-top:9px;
+        width: 75%;
+        align-items: flex-end;
+          margin: 4px; 
+          background:#fff;
+          box-shadow: 10px 10px 10px #ddd;
+      }
+      .textor {
+        text-align: left;
+        float: left;
+        border-radius: 12px; 
+        padding:6px;
+        padding-top:9px;
+        width: 75%; 
+          margin: 4px; 
+          background:#ffe;
+          box-shadow: 10px 10px 10px #ddd;
+      }
