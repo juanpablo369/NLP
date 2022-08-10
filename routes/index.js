@@ -101,6 +101,425 @@ router.post('/response', async(req, res, next) =>{
   manager.addDocument('es', 'hola, buenas noches', 'greetings.noches');
   manager.addDocument('es', 'buena noches', 'greetings.noches');
 
+  
+manager.addDocument("es", "Cuándo inicia el ciclo?", "pregunta.iniciclo");
+manager.addDocument(
+  "es",
+  "Cuándo empieza el siguiente semestre?",
+  "pregunta.iniciclo"
+);
+manager.addDocument("es", "Cuándo inician clases?", "pregunta.iniciclo");
+manager.addDocument(
+  "es",
+  "Cuándo empiezan las clases en la universidad?",
+  "pregunta.iniciclo"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en primer ciclo?",
+  "pregunta.materiasprimer"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en primer ciclo?",
+  "pregunta.materiasprimer"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en primer ciclo?",
+  "pregunta.materiasprimer"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en primer ciclo?",
+  "pregunta.materiasprimer"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en segundo ciclo?",
+  "pregunta.materiasseg"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en segundo ciclo?",
+  "pregunta.materiasseg"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en segundo ciclo?",
+  "pregunta.materiasseg"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en tercer ciclo?",
+  "pregunta.materiastercer"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en tercer ciclo?",
+  "pregunta.materiastercer"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en tercer ciclo?",
+  "pregunta.materiastercer"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en cuarto ciclo?",
+  "pregunta.materiascuar"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en cuarto ciclo?",
+  "pregunta.materiascuar"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en cuarto ciclo?",
+  "pregunta.materiascuar"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en quinto ciclo?",
+  "pregunta.materiasquin"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en quinto ciclo?",
+  "pregunta.materiasquin"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en quinto ciclo?",
+  "pregunta.materiasquin"
+);
+
+manager.addDocument(
+  "es",
+  "Qué materias reciben en sexto ciclo?",
+  "pregunta.materiassext"
+);
+manager.addDocument(
+  "es",
+  "Qué materias se imparten en sexto ciclo?",
+  "pregunta.materiassext"
+);
+manager.addDocument(
+  "es",
+  "Qué materias dan en sexto ciclo?",
+  "pregunta.materiassext"
+);
+
+manager.addDocument(
+  "es",
+  "Qué especialidades tiene la carrera?",
+  "pregunta.especialidades"
+);
+manager.addDocument(
+  "es",
+  "Qué especialidades puedo escoger en septimo ciclo?",
+  "pregunta.especialidades"
+);
+manager.addDocument(
+  "es",
+  "Cuáles son las especialidades de la carrera?",
+  "pregunta.especialidades"
+);
+
+manager.addDocument(
+  "es",
+  "Qué especialidades tiene la carrera?",
+  "pregunta.especialidades"
+);
+manager.addDocument(
+  "es",
+  "Qué especialidades puedo escoger en septimo ciclo?",
+  "pregunta.especialidades"
+);
+manager.addDocument(
+  "es",
+  "Cuáles son las especialidades de la carrera?",
+  "pregunta.especialidades"
+);
+
+manager.addDocument(
+  "es",
+  "Cuántos ciclos son en la carrera?",
+  "pregunta.cantciclos"
+);
+manager.addDocument(
+  "es",
+  "Qué tiempo de duración tiene la carrera?",
+  "pregunta.cantciclos"
+);
+manager.addDocument(
+  "es",
+  "Cuántos ciclos tiene la carrera?",
+  "pregunta.cantciclos"
+);
+
+manager.addDocument(
+  "es",
+  "Qué ciclo es el más dificil de la carrera?",
+  "pregunta.ciclohard"
+);
+manager.addDocument(
+  "es",
+  "Cuál es el ciclo más complicado de la carrera?",
+  "pregunta.ciclohard"
+);
+manager.addDocument(
+  "es",
+  "Cuál es el ciclo con mayor dificultad de la carrera?",
+  "pregunta.ciclohard"
+);
+
+manager.addDocument(
+  "es",
+  "Qué puntaje necesito para ingresar a la carrera?",
+  "pregunta.point"
+);
+manager.addDocument(
+  "es",
+  "Cuántos puntos necesito para la carrera?",
+  "pregunta.point"
+);
+
+manager.addDocument(
+  "es",
+  "Qué necesito para ingresar a estudiar?",
+  "pregunta.reqing"
+);
+manager.addDocument(
+  "es",
+  "Cuáles son los requisitos para estudiar?",
+  "pregunta.reqing"
+);
+
+manager.addDocument("es", "Qué horarios tiene la carrera?", "pregunta.jor");
+manager.addDocument("es", "Qué jornada tiene la carrera?", "pregunta.jor");
+
+manager.addDocument("es", "En dónde esta ubicada la carrera?", "pregunta.ubi");
+manager.addDocument(
+  "es",
+  "En que parte se encuentra la carrera?",
+  "pregunta.ubi"
+);
+
+manager.addDocument(
+  "es",
+  "Cuál es el correo de secretaría de la carrera?",
+  "pregunta.secre"
+);
+
+manager.addDocument(
+  "es",
+  "És lo mismo Computacion y Sistemas?",
+  "pregunta.pregu"
+);
+
+manager.addDocument(
+  "es",
+  "Cuál es el docente más chevere de la carrera?",
+  "pregunta.docchido"
+);
+
+// Train also the NLG
+manager.addAnswer(
+  "es",
+  "pregunta.docchido",
+  "Sin duda, la Ingeniera Genoveva Suing :D"
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.pregu",
+  "A grandes rasgos, un ingeniero en Sistemas se enfoca más en la programación de redes, así como la implementación y optimización de hardware; mientras que un ingeniero en Computación e Informática desarrolla productos para optimizar procesos computacionales y se encarga del correcto procesamiento de los datos. Podras encontrar más detalles acerca de la diferencia en la siguiente pagina https://advance.unab.cl/eventos/diferencias-de-un-ingeniero-en-sistemas-y-uno-en-computacion/#:~:text=A%20grandes%20rasgos%2C%20un%20ingeniero,correcto%20procesamiento%20de%20los%20datos."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.secre",
+  "El correo de secretaría es secretaria.cis@unl.edu.ec"
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.ubi",
+  "La carrera pertenece a la Facultad de Energía, Las industrias y los recursos naturales no renovables, la cual esta ubicada en https://goo.gl/maps/Mw5E6GEWbXrMFY5H8."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.jor",
+  "El horario de clases de la carrera es Diurno y empieza a las 7:30am y finaliza a la 1:30pm."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.reqing",
+  "Para ingresar a la Universidad Nacional de Loja, primeramente debes rendir el examen de acceso a la educación superior de la Senescyt, obtener un puntaje y postular en la carrera que deseas formarte presencial o a distancia. Revisa la oferta académica aquí: https://unl.edu.ec/oferta_academica."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.point",
+  "La carrera de ‘Computación’ se oferta con un puntaje referencial de: 807 puntos."
+);
+
+manager.addAnswer("es", "pregunta.ciclohard", "6to Ciclo.");
+
+manager.addAnswer(
+  "es",
+  "pregunta.cantciclos",
+  "La carrera de Ingeniería en Computación consta de 9 ciclos."
+);
+manager.addAnswer("es", "pregunta.cantciclos", "9 ciclos.");
+manager.addAnswer(
+  "es",
+  "pregunta.cantciclos",
+  "La carrera tiene una duración de 9 ciclos"
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.especialidades",
+  "Las especialidades que existen en la carrera son: Sistemas Inteligentes, Computación Aplicada e Ingeniería del Software."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.especialidades",
+  "Las especialidades para el septimo ciclo son: Sistemas Inteligentes, Computación Aplicada e Ingeniería del Software."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.especialidades",
+  "Las especialidades que ofrece la carrera son: Sistemas Inteligentes, Computación Aplicada e Ingeniería del Software."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiassext",
+  "En el sexto ciclo de la carrera de computación hay: Teoría de Autómatas y Computabilidad Avanzada, Sistemas Distribuidos, Procesos de Software, Computación en la nube y Gestión de Redes y Comunicaciones."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiassext",
+  "Teoría de Autómatas y Computabilidad Avanzada, Sistemas Distribuidos, Procesos de Software, Computación en la nube y Gestión de Redes y Comunicaciones."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiassext",
+  "Las materias que se imparten en el sexto ciclo son: Teoría de Autómatas y Computabilidad Avanzada, Sistemas Distribuidos, Procesos de Software, Computación en la nube y Gestión de Redes y Comunicaciones."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiasquin",
+  "En el quinto ciclo de la carrera de computación hay: Sistemas Digitales, Análisis Numérico, Desarrollo Basado en Plataformas, Simulación y Fundamentos de Redes de Comunicaiones."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasquin",
+  "Sistemas Digitales, Análisis Numérico, Desarrollo Basado en Plataformas, Simulación y Fundamentos de Redes de Comunicaiones."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasquin",
+  "Las materias que se imparten en el quinto ciclo son: Sistemas Digitales, Análisis Numérico, Desarrollo Basado en Plataformas, Simulación y Fundamentos de Redes de Comunicaiones."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiascuar",
+  "En el cuarto ciclo de la carrera de computación hay: Complejidad Computacional, Ecuaciones Diferenciales, Diseño de Software, Sistemas Operativos y Metodología de la Investigación en Computación."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiascuar",
+  "Complejidad Computacional, Ecuaciones Diferenciales, Diseño de Software, Sistemas Operativos y Metodología de la Investigación en Computación."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiascuar",
+  "Las materias que se imparten en el cuarto ciclo son: Complejidad Computacional, Ecuaciones Diferenciales, Diseño de Software, Sistemas Operativos y Metodología de la Investigación en Computación."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiastercer",
+  "En el tercer ciclo de la carrera de computación hay: Estructura de Datos, Requisistos de Software, Estadística Analítica, Arquitectura de Ordenadores y Base de Datos."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiastercer",
+  "Estructura de Datos, Requisistos de Software, Estadística Analítica, Arquitectura de Ordenadores y Base de Datos."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiastercer",
+  "Las materias que se imparten en el tercer ciclo son: Estructura de Datos, Requisistos de Software, Estadística Analítica, Arquitectura de Ordenadores y Base de Datos."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiasseg",
+  "En el segundo ciclo de la carrera de computación hay: Diseño de Circuitos, Análisis Matemático, Teoría de la Distribución y la Probabilidad, Programación Orientada a Objetos y Emprendimiento e innovación tecnológica."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasseg",
+  "Diseño de Circuitos, Análisis Matemático, Teoría de la Distribución y la Probabilidad, Programación Orientada a Objetos y Emprendimiento e innovación tecnológica."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasseg",
+  "Las materias que se imparten en segundo ciclo son: Diseño de Circuitos, Análisis Matemático, Teoría de la Distribución y la Probabilidad, Programación Orientada a Objetos y Emprendimiento e innovación tecnológica."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.materiasprimer",
+  "En el primer ciclo de la carrera de computación hay: Electricidad, Matemáticas Discretas, Algebra Lineal, Teoria de la Programación y Comunicación y Redaccion Técnica."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasprimer",
+  "Electricidad, Matemáticas Discretas, Algebra Lineal, Teoria de la Programación y Comunicación y Redaccion Técnica."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.materiasprimer",
+  "Las materias que se imparten en primer ciclo son: Electricidad, Matemáticas Discretas, Algebra Lineal, Teoria de la Programación y Comunicación y Redaccion Técnica."
+);
+
+manager.addAnswer(
+  "es",
+  "pregunta.iniciclo",
+  "Aun no se ha definido la fecha de inicio de clases del siguiente periodo académico."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.iniciclo",
+  "No me ha confirmado la fecha aún."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.iniciclo",
+  "Lo siento aun no conocemos la fecha de inicio de clases."
+);
+manager.addAnswer(
+  "es",
+  "pregunta.iniciclo",
+  "Por el momento no se ha confirmado la fecha de inicio de clases."
+);
+
   // Train also the NLG
   manager.addAnswer('es', 'pregunta.decanoedu', 'El decano de la facultad de la Educación, el Arte y la Comunicación, es el Dr. Yovany Salazar Estrada, Ph.D., yovany.salazar@unl.edu.ecc');
   manager.addAnswer('es', 'pregunta.decanoedu', 'El decano de la facultad de la Educación, el Arte y la Comunicación, es el Dr. Yovany Salazar Estrada, Ph.D., yovany.salazar@unl.edu.ec');
